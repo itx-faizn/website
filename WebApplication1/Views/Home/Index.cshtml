@@ -1,0 +1,502 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        nav {
+            flex: 1;
+            text-align: right;
+        }
+
+            nav ul {
+                display: inline-block;
+                list-style-type: none;
+            }
+
+                nav ul li {
+                    display: inline-block;
+                    margin-right: 20px;
+                }
+
+        a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: auto;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: auto;
+            max-width: 1300px;
+        }
+
+        .col-2 {
+            flex-basis: 50%;
+            min-width: 300px;
+        }
+
+            .col-2 img {
+                max-width: 100%;
+                padding: 50px 0;
+            }
+
+            .col-2 h1 {
+                font-size: 50px;
+                line-height: 60px;
+                margin: 25px 0;
+            }
+
+        .btn {
+            display: inline-block;
+            background: #ff523b;
+            color: #fff;
+            padding: 8px 30px;
+            margin: 30px 0;
+            border-radius: 30px;
+        }
+
+            .btn :hover {
+                background: #534343
+            }
+
+
+        .header {
+            background: radial-gradient(#80ced6,#cfe0e8);
+        }
+
+            .header .row {
+                margin-top: 30px;
+            }
+
+        .catagories {
+            margin: 70px 0;
+        }
+
+
+        .col-3 {
+            flex-basis: 30%;
+            min-width: 100px;
+            margin-bottom: 30px;
+        }
+
+            .col-3 img {
+                width: 100%;
+            }
+
+        .small-container {
+            max-width: 1080px;
+            margin: auto;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        h4 {
+            color: #555;
+            font-weight: normal;
+        }
+
+        .clo-4 p {
+            font-size: 14px;
+        }
+
+        .clo-4 {
+            flex-basis: 25%;
+            padding: 30px;
+            min-width: 10px;
+            margin-bottom: 80px;
+            transition: 0.5s;
+        }
+
+            .clo-4 img {
+                width: 100%;
+            }
+
+            .clo-4:hover {
+                transform: translateY(-5px);
+            }
+
+        .title {
+            text-align: center;
+            margin: O auto 80px;
+            position: relative;
+            line-height: 60px;
+            color: #555;
+        }
+
+            .title::after {
+                content: " ";
+                background: #ff523b;
+                width: 90px;
+                height: 6px;
+                border-radius: 5px;
+                position: absolute;
+                bottom: 0;
+                left: 47%;
+                transform: translateX (-50%)
+            }
+
+        .rating {
+            color: red;
+        }
+
+        .offer {
+            background: radial-gradient(#80ced6,#cfe0e8);
+            margin-top: 80px;
+            padding: 30px 0;
+        }
+
+            .offer .col-2 img {
+                padding: 50px;
+            }
+
+        .col-2 p {
+            color: #555;
+        }
+
+        /*--------- footer */
+
+        .footer {
+            background: #000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 60px 0 20px;
+        }
+
+        .footer {
+            color: #8a8a8a;
+        }
+
+            .footer h3 {
+                color: #fff;
+                margin-bottom: 20px;
+            }
+
+        .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
+            min-width: 250px;
+            margin-bottom: 10px;
+        }
+
+        .footer-col-1 {
+            flex-basis: 30%;
+        }
+
+        .footer-col-2 {
+            flex: 1;
+        }
+
+            .footer-col-2 img {
+                position: relative;
+                top: -10px;
+                right: -30px;
+                width: 170px;
+                margin-bottom: 10px;
+            }
+
+        .footer-col-3, .footer-col-4 {
+            flex-basis: 12%;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .app-logo {
+            margin-top: 20px;
+        }
+
+            .app-logo img {
+                width: 140px;
+            }
+
+        .footer hr {
+            border: none;
+            background: #b5b5b5;
+            height: 1px;
+            margin: 20px 0;
+        }
+
+        .copy-right {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/FM Store Logo.jpg" width="125px">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Products</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Account</a></li>
+                    </ul>
+                </nav>
+                <img src="images/cart.png" alt="Cart Pic" height="30px" width="30px">
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <h1>Get Your Work <br> A New Style!</h1>
+                    <p>In FM Store you can buy Exclusive and Feature Products. You also buy products <br>for speacial discount offers.</p>
+                    <a href="" class="btn">Explore Now &#8594;</a>
+                </div>
+                <div class="col-2">
+                    <img src="images/image1.png" alt="Main Pic">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature Catagories -->
+    <div class="catagories">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/category-1.jpg">
+                </div>
+                <div class="col-3">
+                    <img src="images/category-2.jpg">
+                </div>
+                <div class="col-3">
+                    <img src="images/category-3.jpg">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Featured Products -->
+    <div class="small-conatainer">
+
+        <h2 class="title">Featured Products</h2>
+
+        <div class="row">
+            <div class="clo-4">
+                <img src="images/product-1.jpg">
+                <h4>Red T-Shirt</h4>
+                <div class="rating">
+                    <span>&bigstar;&bigstar;&bigstar;&bigstar;</span>
+                </div>
+                <p>$20</p>
+            </div>
+
+            <div class="clo-4">
+                <img src="images/product-2.jpg">
+                <h4>Red T-Shirt</h4>
+                <div class="rating">
+                    <span>&bigstar;&bigstar;&bigstar;&bigstar;</span>
+                </div>
+                <p>$120</p>
+            </div>
+
+            <div class="clo-4">
+                <img src="images/product-3.jpg">
+                <h4>Red T-Shirt</h4>
+                <div class="rating">
+                    <span>&bigstar;&bigstar;&bigstar;&star;</span>
+
+                </div>
+                <p>$30</p>
+            </div>
+
+            <div class="clo-4">
+                <img src="images/product-4.jpg">
+                <h4>Red T-Shirt</h4>
+                <div class="rating">
+                    <span>&bigstar;&bigstar;&bigstar;&bigstar;</span>
+                </div>
+                <p>$20</p>
+            </div>
+
+        </div>
+        <!-- Latest Products -->
+        <h2 class="title">Latest Products</h2>
+        <div class="row">
+            <div class="clo-4">
+                <img src="images/product-5.jpg">
+                <h4>Red T-Shirt</h4>
+                <div class="rating">
+                    <span>&bigstar;&bigstar;&bigstar;&bigstar;</span>
+                </div>
+                <p>$20</p>
+            </div>
+
+            <div class="clo-4">
+                <img src="images/product-6.jpg">
+                <h4>Red T-Shirt</h4>
+                <div class="rating">
+                    <span>&bigstar;&bigstar;&bigstar;&bigstar;</span>
+                </div>
+                <p>$120</p>
+            </div>
+
+            <div class="clo-4">
+                <img src="images/product-7.jpg">
+                <h4>Red T-Shirt</h4>
+                <div class="rating">
+                    <span>&bigstar;&bigstar;&bigstar;&star;</span>
+
+                </div>
+                <p>$30</p>
+            </div>
+
+            <div class="clo-4">
+                <img src="images/product-8.jpg">
+                <h4>Red T-Shirt</h4>
+                <div class="rating">
+                    <span>&bigstar;&bigstar;&bigstar;&bigstar;</span>
+                </div>
+                <p>$20</p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="clo-4">
+                <img src="images/product-9.jpg">
+                <h4>Red T-Shirt</h4>
+                <div class="rating">
+                    <span>&bigstar;&bigstar;&bigstar;&bigstar;</span>
+                </div>
+                <p>$20</p>
+            </div>
+
+            <div class="clo-4">
+                <img src="images/product-10.jpg">
+                <h4>Red T-Shirt</h4>
+                <div class="rating">
+                    <span>&bigstar;&bigstar;&bigstar;&bigstar;</span>
+                </div>
+                <p>$120</p>
+            </div>
+
+            <div class="clo-4">
+                <img src="images/product-11.jpg">
+                <h4>Red T-Shirt</h4>
+                <div class="rating">
+                    <span>&bigstar;&bigstar;&bigstar;&star;</span>
+
+                </div>
+                <p>$30</p>
+            </div>
+
+            <div class="clo-4">
+                <img src="images/product-12.jpg">
+                <h4>Red T-Shirt</h4>
+                <div class="rating">
+                    <span>&bigstar;&bigstar;&bigstar;&bigstar;</span>
+                </div>
+                <p>$20</p>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Offer  -->
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/exclusive.png" class="offer-image">
+                </div>
+                <div class="col-2">
+                    <p>Exclusively Products Avaliable in FMstore</p>
+                    <h1>Smart Band 4</h1>
+                    <p>
+                        <small>
+                            The Mi Smart band has 4 extra features and larger than Mi smart band 3. Amolad full touch display with adjustable brightness. Health and sports features track daily record.
+                        </small>
+                    </p>
+                    <a href="#" class="btn">Buy Now &#8594</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Dwonload our App</h3>
+                    <p>Download for App for Android and iso Mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/FM Store Logo.jpg" width="180px">
+                    <p>Our Purpose to provide the Customer flexbiliity and the Qualtiy.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Return Policy</li>
+                        <li>My Account</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>TikTok</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copy-right">Copyright 2022-fm store</p>
+        </div>
+    </div>
+</body>
+</html>
